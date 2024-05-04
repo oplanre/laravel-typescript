@@ -1,0 +1,57 @@
+{
+    "name": "lanre/laravel-typescript",
+    "description": "Transform Laravel models into TypeScript interfaces",
+    "keywords": [
+        "laravel",
+        "typescript"
+    ],
+    "homepage": "https://github.com/oplanre/laravel-typescript",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lanre Ajao",
+            "email": "hi@lnear.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "doctrine/dbal": "^3.1",
+        "illuminate/contracts": "^10.0|^11.0",
+        "spatie/laravel-package-tools": "^1.11.0"
+    },
+    "require-dev": {
+        "brianium/paratest": "^6.2|^7.4",
+        "larastan/larastan": "^0.7.11|^2.0.1",
+        "nunomaduro/collision": "^5.3|^6.1.0|^8.0",
+        "orchestra/testbench": "^9.0",
+        "phpunit/phpunit": "^9.3|^10.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lame\\TypeScript\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lame\\TypeScript\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "stan": "vendor/bin/phpstan analyse",
+        "test": "./vendor/bin/testbench package:test --parallel --no-coverage",
+        "test-coverage": "vendor/bin/phpunit --migrate-configuration  --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lame\\TypeScript\\TypeScriptServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
